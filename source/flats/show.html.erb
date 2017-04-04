@@ -1,0 +1,48 @@
+<!-- source/flats/show.html.erb -->
+
+<!-- Read from data.flats with owner's name as key -->
+<% flat = data.flats[owner] %>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('../images/background-london.jpg'); height: 50vh; background-position: center;">
+</div>
+
+<div class="container text-center">
+   <div class="row">
+     <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+       <div class="header-details">
+         <div class="header-owner">
+           <%= image_tag flat.owner_picture, class: "img-circle avatar-150" %>
+         </div>
+         <div class="header-owner-details">
+           <p><%= flat.owner_name %></p>
+           <h1><%= flat.description %></h1>
+           <p><%= flat.city %></p>
+         </div>
+       </div>
+     </div>
+     <div class="col-xs-12 col-sm-4 text-center">
+       <form action="#">
+           <h4>Book This Flat</h4>
+           <div class="form-group">
+             <row>
+               <div class="col-xs-6"><input type="text" placeholder="check in" id="checkin" class="form-control"></div>
+               <div class="col-xs-6"><input type="text" placeholder="checkout" id="checkout" class="form-control"></div>
+             </row>
+           </div>
+       <div class="form-group">
+         <select name="" id="guests" class="form-control">
+           <option value="1">1 guest</option>
+           <option value="2">2 guest</option>
+           <option value="3">3 guest</option>
+         </select>
+        <input type="submit" value="Book It!" style="width: 100%" class="btn btn-danger">
+       </div>
+       </form>
+     </div>
+   </div>
+ </div>
+
+
+<!-- Inject flat data in template -->
+
+
